@@ -1,0 +1,46 @@
+{
+    "name": "tempalte",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "format": "prettier --write src/**/*.js",
+        "stylelint": "stylelint --fix src/**/*.{scss,css}",
+        "eslint": "eslint --fix src/**/*.js",
+        "markuplint": "markuplint src/**/*.html",
+        "fix": "npm run format && npm run eslint && npm run stylelint && npm run markuplint"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.16",
+        "eslint": "^8.54.0",
+        "eslint-config-prettier": "^9.0.0",
+        "glob": "^10.3.10",
+        "markuplint": "^3.15.0",
+        "postcss": "^8.4.31",
+        "postcss-normalize-charset": "^6.0.0",
+        "prettier": "^3.1.0",
+        "sass": "^1.69.5",
+        "stylelint": "^15.11.0",
+        "stylelint-config-recess-order": "^4.4.0",
+        "stylelint-config-standard": "^34.0.0",
+        "stylelint-prettier": "^4.1.0",
+        "stylelint-scss": "^5.3.1",
+        "typescript": "^5.3.2",
+        "vite": "^5.0.0",
+        "vite-plugin-ejs": "^1.7.0",
+        "vite-plugin-handlebars": "^1.6.0",
+        "vite-plugin-live-reload": "^3.0.3"
+    },
+    "browserslist": [
+        "last 3 versions",
+        "> 5%",
+        "Firefox ESR",
+        "not dead"
+    ],
+    "dependencies": {
+        "swiper": "^11.0.5"
+    }
+}

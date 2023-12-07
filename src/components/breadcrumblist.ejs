@@ -1,0 +1,24 @@
+<ol class="p-breadcrumblist">
+    <%- breadcrumblist() %>
+</ol>
+
+<%
+    function breadcrumblist() {
+        var html = '<li><a href="' + rootDirectory + '">' +" ホーム "+'</a></li>';
+        if(slug) {
+            var paths = slug.split('/');
+            var url = ""
+            paths.forEach(function(path, index) {
+                if(path && path != 'index') {
+                        url += path + '/'
+                    if (index === paths.length - 1) {
+                        html += '<li><span>' + path +'</span></li>'
+                    } else {
+                        html += '<li><a href="' + rootDirectory + url + '">' + path +'</a></li>'
+                    }
+                }
+            });
+        }
+        return html
+    }
+%>

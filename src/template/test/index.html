@@ -1,0 +1,13 @@
+<!doctype html>
+<%_ const metaInfo = { slug: "template/test", rootDirectory: "../../" }; _%>
+<html lang="jp">
+    <head>
+        <%- include('components/metadata',metaInfo); %> <%- include('components/head-gtm'); %>
+    </head>
+    <body>
+        <%- include('components/body-gtm'); %> <%- include('components/header',metaInfo); %> <%- include('components/breadcrumblist',metaInfo); %>
+        <!-- page content start -->
+        <!-- page content end -->
+        <%- include('components/footer'); %>
+    </body>
+</html>

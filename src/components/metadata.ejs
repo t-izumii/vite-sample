@@ -1,0 +1,61 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="format-detection" content="telephone=no,email=no,address=no" />
+<title><%= pageTitle() %></title>
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:type" content="<%= ogtype() %>" />
+<meta property="og:url" content="<%= pageUrl() %>" />
+<meta property="og:title" content="<%= pageTitle() %>" />
+<meta property="og:description" content="<%= data[slug].description %>" />
+<meta property="og:image" content="<%= ogImg('jpg') %>" />
+<meta property="og:site_name" content="<%= data.site.title %>" />
+<meta name="description" content="<%= data[slug].description %>" />
+<link rel="shortcut icon" href="<%- rootDirectory %>favicon.ico" />
+<link rel="apple-touch-icon" href="<%- rootDirectory %>apple-touch-icon.png" />
+<link rel="stylesheet" href="<%- rootDirectory %>assets/scss/style.scss" />
+<script type="module" src="<%- rootDirectory %>assets/js/main.js"></script>
+
+<%
+    function ogtype() {
+        return (data[slug] == 'home' ? 'website' : 'article');
+    }
+
+    function ogImg(extension) {
+        if(data[slug].ogimage) {
+            return data.site.url + '/assets/images/ogp/' + data[slug].ogimage;
+        } else {
+            return data.site.url + '/assets/images/ogp/' + 'ogp.' + extension;
+        }
+    }
+
+    function pageTitle() {
+        var result = [];
+        result.push(data.site.title);
+        if(slug) {
+            var paths = slug.split('/');
+            var currentPath = '';
+            paths.forEach(function(path) {
+                if (currentPath) {
+                currentPath += '/' + path;
+                } else {
+                    currentPath = path;
+                }
+                result.push(data[currentPath].title);
+            })
+        }
+        return result.reverse().join(' | ');
+    }
+
+    function pageUrl() {
+        var url = data.site.url + '/';
+        if(slug) {
+            var paths = slug.split('/');
+            paths.forEach(function(path){
+                if(path != 'index') {
+                    url += path + '/';
+                }
+            })
+        }
+        return url;
+    }
+%>

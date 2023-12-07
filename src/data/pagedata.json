@@ -1,0 +1,33 @@
+{
+    "data": {
+        "site": {
+            "title": "サイトタイトル",
+            "url": "https://template.jp"
+        },
+        "index": {
+            "title": "HOME PAGE ですよ",
+            "description": "HOMEページの概要をここに記述します。HOMEページの概要をここに記述します。",
+            "ogimage": ""
+        },
+        "index/kasou": {
+            "title": "下層 ですよ",
+            "description": "下層 ですよ",
+            "ogimage": ""
+        },
+        "template": {
+            "title": "about usですよ",
+            "description": "about usページの概要をここに記述します。",
+            "ogimage": ""
+        },
+        "template/test": {
+            "title": "testですよ",
+            "description": "about usページの概要をここに記述します。",
+            "ogimage": ""
+        },
+        "template/test/test": {
+            "title": "testですよ",
+            "description": "about usページの概要をここに記述します。",
+            "ogimage": ""
+        }
+    }
+}
